@@ -64,11 +64,11 @@ pip install -r requirements/dev.txt
 
 RHO uses the following datasets:
 
-- **Mapillary MGL**: Street-level panoramic images across 7 cities (Berlin, Chicago, Detroit, Montrouge, San Francisco, Toulouse, Washington)
+- **Mapillary Geo-Localization (MGL)**: Street-level panoramic images across 7 cities (Berlin, Chicago, Detroit, Montrouge, San Francisco, Toulouse, Washington)
 - **KITTI**: Autonomous driving sequences with 120° FOV perspective images
 - **Sim2Real**: Synthetic-to-real domain adaptation dataset
 
-Data and pretrained models can be downloaded from:
+The CV-RHO dataset extends the Mapillary MGL data with panoramic image sequences and robustness variants. Data and pretrained models can be downloaded from:
 ```
 https://cvg-data.inf.ethz.ch/OrienterNet_CVPR2023
 ```
