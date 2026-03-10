@@ -23,18 +23,18 @@ python3 -m pip install -r requirements/full.txt
 First you need a developper account at [Mapillary](https://www.mapillary.com/dashboard/developers) to get the free accesss token to download the clean dataset. 
 See [the offical doc](https://www.mapillary.com/developer/api-documentation?locale=zh_CN) for more instruction.
 
-After you get the free access token, you can download the dataset via:
+After you get the free access token, you can download the CV-RHO clean dataset.
 
+```bash
+python3 -m maploc.data.mapillary.prepare --token $YOUR_TOKEN --split_filename splits_RHO_clean.json --osm_source LATEST
+```
+
+If you want to extend the dataset, you could add new cities in the <code>RHO/maploc/data/mapillary/config.py</code> and download the data via:
 ```bash
 python3 -m maploc.data.mapillary.split --token $YOUR_TOKEN --output_filename splits_MGL_{scene}.json --data_dir datasets/DIR_NAME --osm_source LATEST --force_auto_val_bbox
 python3 -m maploc.data.mapillary.prepare --token $YOUR_TOKEN --split_filename YOUR_SPLITS_FILE_NAME.json --osm_source CACHED
 ```
-
-Then run the splits_join.py to produce the JSON file for evaluation, you can select the cities you want to include for the evaluation.
-
-```bash
-python3 datatsets/splits_join.py
-```
+After downloading data from new cities, run the <code>splits_join.py</code> to produce the JSON file, then use it in the data YAML file for evaluation.
 
 ## Evaluation
 
